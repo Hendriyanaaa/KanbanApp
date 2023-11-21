@@ -25,3 +25,6 @@ Route::get('/category', [CategoryController::class,'index']);
 Route::get('/aboutus', [AboutusController::class,'aboutus']);
 Route::get('/contactus', [ContactusController::class,'contactus']);
 Route::get('/address', [AddressController::class,'address']);
+Route::get('/', function () {
+    return view('home');
+});
