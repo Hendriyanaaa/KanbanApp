@@ -1,1 +1,0 @@
-ini adalah halaman contact us

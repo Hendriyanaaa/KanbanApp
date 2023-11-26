@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,10 @@ Route::get('/contactus', [ContactusController::class,'contactus']);
 Route::get('/address', [AddressController::class,'address']);
 Route::get('/', function () {
     return view('home');
+})->name('home');
+Route::get('/tasks/', [TaskController::class, 'index'])->name('tasks.index');
+Route::get('welcome', function (){
+    return view('welcome');
 });
+Route::get('/tasks/{id}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
