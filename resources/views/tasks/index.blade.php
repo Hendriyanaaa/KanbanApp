@@ -1,5 +1,4 @@
 @extends('layouts.master')
-@section('home')
 @section('pageTitle', $pageTitle)
 @section('main') 
 <div class="task-list-container">
