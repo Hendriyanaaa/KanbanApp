@@ -17,6 +17,7 @@
     <div class="task-list-header-detail">Detail</div>
     <div class="task-list-header-due-date">Due Date</div>
     <div class="task-list-header-progress">Progress</div>
+    <div class="task-list-header-links">Action</div>
   </div>
 
   @foreach ($list as $item)
@@ -44,6 +45,11 @@
               Not Started
         @endswitch
     </div>
+    <div>
+      <a href="{{ route('tasks.edit', ['id' => $item->id]) }}">Edit</a>
+      <a href="{{ route('tasks.delete', ['id' => $item->id])}}">Delete</a>
+
+    </div> 
   </div>
   @endforeach
 </div>

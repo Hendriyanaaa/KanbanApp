@@ -8,5 +8,6 @@
         <span class="material-icons sidebar-icon">list</span>
         <p class="sidebar-text">Task List</p>
       </a>
+    
     </div>
   </div>
