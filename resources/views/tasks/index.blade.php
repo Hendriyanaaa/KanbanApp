@@ -1,3 +1,6 @@
+@php
+  use App\Models\Task;
+@endphp
 @extends('layouts.master')
 @section('pageTitle', $pageTitle)
 @section('main') 
@@ -20,12 +23,25 @@
     <div class="task-list-header-links">Action</div>
   </div>
 
+  {{-- @foreach ($list as $item) --}}
   @foreach ($list as $item)
   <div class="table-body">
-    <div class="table-body-task-name">
-      <span class="material-icons @if ($item->status == 'completed') check-icon-completed @else check-icon @endif">
+    <div class="table-body-task-name"> 
+      @if($item->status == 'completed') 
+      <span class="material-icons check-icon-completed ">
+      check_circle
+    </span>
+      @else
+      <form action="{{ route('tasks.move', ['id'=> $item->id, 'status'=>Task::STATUS_COMPLETED])}}"
+        method="POST" id="complete--{{$item->id}}"
+      >
+      @csrf
+      @method('patch') 
+      <span class="material-icons check-icon " onclick="document.getElementById('complete--{{$item->id}}').submit()">
         check_circle
       </span>
+      @endif
+      
       {{$item->name}}
     </div>
     <div class="table-body-detail">{{$item->detail}}</div>
