@@ -2,13 +2,14 @@
 {{-- @section('pageTitle', $pageTitle) --}}
 @section('main')
 <div class="task-summary-container">
-  @if (Auth::check())
+  {{-- @if (Auth::check())
   <h1 class="task-summary-greeting">
     Hi, {{ Auth::user()->name }} !
   </h1>
 @else
   <h1 class="task-summary-greeting">Hi, Guest!</h1>
-@endif
+@endif --}}
+<h1 class="task-summary-greeting">Hi, {{ Auth::user()->name }} !</h1>
   <h1 class="task-summary-heading">Summary of Your Tasks</h1>
 
  <div  class="task-summary-list">
