@@ -6,6 +6,10 @@
           <h1 class="task-summary-greeting">
             Hi, {{ Auth::user()->name }} !
           </h1>
+          @if (Auth::check())
+          <h1 class="task-summary-greeting">
+            Hi, {{ Auth::user()->name }} !
+          </h1>
         @else
           <h1 class="task-summary-greeting">Hi, Guest!</h1>
         @endif
