@@ -14,7 +14,7 @@
           <div class="alert-danger">{{ $message }}</div>
         @enderror
       </div>
-
+      
       <div class="form-item">
         <label>Password:</label>
         <input class="form-input" type="password" value="" name="password" required>
@@ -26,6 +26,7 @@
       <button type="submit" class="form-button">Submit</button>
     </form>
 
-    <p class="auth-link">You don't have an account? <a href="{{ route('auth.signup') }}">Register here</a></p>
+    {{-- <p class="auth-link">You don't have an account? <a href="{{ route('auth.signup') }}">Register here</a></p> --}}
+    <p class="auth-link">Already have an account? <a href="{{ route('auth.login') }}">Login here</a></p>
   </div>
 @endsection
